@@ -1,0 +1,37 @@
+Exercício 1
+
+a)  Fact Tables - Traffic event and Recharges
+    
+    Dimensions - service type, event type, date, source location, destin, client, timestamp
+    payment type, card, date
+
+    Measures - consumed time, consumed vol, consumed events, billed time, billed volume, billed events
+    recharged money
+    
+
+b)  One-to-many: Um traffic event tem apena um timestamp associado
+    mas nesse timestamp podem ocorrer vários eventos
+
+    One-to-one: Location 
+
+
+c)  Ver ficheiro Exercicio1c.bim
+
+
+d)  Ver ficheiro script.sql
+
+
+
+
+Exercício 4
+
+Os eventos são do tipo Snapshot porque registam dados ao longo de um período de tempo,
+neste caso, durante meses, trimestres e anos.
+A proposta de substituir as faixas etárias (age group) pela idade seria interessante no sentido 
+em que iria permitir a obtenção de dados mais completos, podendo num futuro realizarem-se
+estatisticas consoante certas idades, analisar quais as idades mais influentes, etc. 
+A divisão por faixa etária torna-se mais abrangente e não tão "precisa" como a divisão por idade.
+Deste modo, facilita-se a disponibilização da informação usando-se filtragens
+
+Fact tables:    Consulta e Prescrição do Medicamento
+Modelo:         Ver ficheiro Exercicio4.bim

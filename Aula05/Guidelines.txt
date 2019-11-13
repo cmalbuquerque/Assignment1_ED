@@ -1,0 +1,31 @@
+Hipotese: 
+É possivel, dada uma área, analisar o interesse nesse mesma área, temporalmente?
+
+
+Papers: 
+
+Detecting Points of Interest in a City from Taxi GPS with Adaptive DBSCAN
+Uriwan Angkhawey Veera Muangsin
+
+Revealing the characteristics of active area in the city by Taxi GPS data a study of Shenzhen, China
+Lu Liu, Lin Tang
+
+Automatically recognizing places of interest from unreliable GPS data using spatio-temporal density estimation and line intersections
+Tanusri Bhattacharya Lars Kulik James Bailey
+
+
+
+Fact Table:
+Ponto de Interesse 
+Interesse
+
+Dimensões:
+GPS
+Taxi
+Data Time
+
+Measure:
+visitas no ponto de interesse
+
+
+--- O nome da rua é uma measure ou um atributo da dimensão?

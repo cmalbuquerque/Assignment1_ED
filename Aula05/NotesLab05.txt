@@ -1,0 +1,49 @@
+--------------------------------- Algumas Notas Lab 05 ---------------------------------
+
+LER FICHEIRO CONSIDERAÇÕES.PDF QUE CONTEM OS RESULTADOS OBTIDOS
+
+Data set escolhido: Chicago Taxi Rides 2016 https://www.kaggle.com/chicago/chicago-taxi-rides-2016
+
+O data set é composto por 12 ficheiros CSV com os registos dos taxis, sendo que cada ficheiro corresponde 
+a um mês do ano.
+Esses ficheiros encontram-se já "normalizados" onde muitos atributos (pickupLatitude, pickupLongitude, 
+dropoffLatitude, dropofflongitude, company, commonArea) estão definidos com IDs. A correspondência desses 
+IDs com o conteúdo que realmente se pretende analisar encontra-se noutros ficheiros CSV que contêm esse 
+mapeamento. 
+As latitudes e longitudes dos pontos iniciais e finais encontram-se mapeadas num script JSON que faz parte 
+do data set.
+A nosso ver, o ficheiro JSON disponibilizado no data set não se encontra bem formatado, o que tornou dificil 
+a extração dos dados das latitudes e longitudes.
+
+
+Procedimento:
+
+1)  Criou-se um modelo multidimensional com todas as dimensões necessárias à análise do problema
+e, tendo este diagrama e o diagrama relacional, gerou-se o script DDL para criar a base de dados Postgres.
+
+Script DDl: ChicagoTaxisDDl.sql
+
+
+2)  Criaram-se transformações recorrendo ao Data Integration Pentaho para fazer migração e tratamento de dados para
+a base de dados local
+
+
+3)  Implementou-se um script python para transformar o ficheiro JSON que contem os valores das latitudes/longitudes
+e substituir diretamente os IDs de cada latitude e longitude pelo valor em si. 
+
+Os ficheiros CSV editados encontram-se no diretório /Fixed with lat-long instead of id. 
+
+Este passo foi feito dado que não se estava a conseguir tratar das junções das tabelas de latitude e longitude com 
+a tabela resultante de cada ficheiro CSV de registos dos táxis. 
+
+A implementação antiga da transformação que não se conseguiu terminar encontra-se no ficheiro: 
+KettleFiles/LoadTaxis.ktr
+
+A nova transformação criada já com o os CSV alterados encontra-se no ficheiro:
+KettleFiles/LoadTaxisNew.ktr
+
+
+4) Criou-se uma transformação para carregar os dados para a Fact Table, no entanto, não se conseguiu terminar o processo 
+(demora mais de 40 minutos a fazer lookup a uma dimensão). Como não se conseguiu identificar qual o erro, e como se 
+perderam imensas horas de volta desta abordagem, decidiu-se entregar na mesma todo o trabalho desenvolvido. 
+

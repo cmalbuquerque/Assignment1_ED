@@ -1,0 +1,28 @@
+--------------------------------- Algumas Notas Lab 03 ---------------------------------
+
+1)  Gerou-se automaticamente o script DDL através do diagrama multidimensional
+disponibilizado na pasta Pentaho_resources-NEW.
+Script: NorthwindDDL.sql
+
+2) Criou-se uma base de dados local, e correu-se o script para proceder à criação
+de tabela e estabelecimento de relações entre as mesmas
+
+3)  Usando o Pentaho-Data-Integration, criou-se um Job para fazer Truncate das tabelas
+(ClearAllJob)
+
+4)  Criaram-se transformações responsáveis por fazer o load de dados para as tabelas: 
+d_category, d_product, d_location, d_customer, d_supplier, d_order, d_shipper na BD local
+
+5)  Criou-se uma transformação que faz Load da Fact table do problema
+
+6)  O job RunJob executa o script que faz Truncate, e depois executa uma sequência de 
+transformações para carregar a base de dados local, e depois faz o load da fact table
+
+Portanto, basta correr o RunJob que ele faz o trabalho todo.
+Caso dê erros ao correr o RunJob, isto deve-se ao diretório escolhido para executar cada
+transformação, uma vez que varia consoante onde se encontram armazenados os ficheiros pentaho
+
+NOTA: O último exercício do guião foi riscado pelo professor, no entanto só nos apercebemos
+da atualização após o termos completado. Enviamos na mesma a transformação criada para o 
+Slow Changing Dimensions assim como um PDF com o tutorial:
+Slowly Change Dimensions Tutorial.pdf
